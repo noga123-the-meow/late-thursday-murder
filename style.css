@@ -1,0 +1,414 @@
+/* צבעי הבסיס: התחילו בשינוי שני הצבעים האלה. */
+/* =========================
+   GENERAL
+========================= */
+:root {
+  --night: #2e0c08;
+  --blood: #860505;
+  
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 25px 0;
+
+  background: var(--night);
+
+  color: #f2e9e9;
+  font-family: Georgia, serif;
+}
+
+::selection{
+  background: #d52c3b;
+  color: #fff;
+}
+
+main { 
+  width: min(850px, 92%); 
+  margin: 30px auto; 
+}
+
+h1, h2 { 
+  color: #d52c3b;
+  font-size: 38px;
+  letter-spacing: 2px;
+
+  text-shadow:
+    0 0 8px rgba(213, 44, 59, 0.4);
+}
+
+.brand { 
+  font-size: 12px; 
+  letter-spacing: .15em; 
+  color: var(--blood); }
+
+/* התמונה נמצאת מקומית באותה תיקייה. אפשר להחליף אותה בתמונה שלכן. */
+.scene {
+  height: 320px;
+  position: relative;
+  overflow: hidden;
+  background: #211932 url('background photo.jpg') center;
+  border: 1px solid #bc9c68;
+  border-radius: 100px 100px 12px 12px;
+}
+
+.door {
+  position: absolute;
+  width: 25%;
+  height: 65%;
+  left: 37.5%;
+  top: 12%;
+  display: grid;
+  place-items: center;
+  border-radius: 50% 50% 4px 4px;
+  background: none;
+  color: #711313d9;
+  font-size: 148px;
+  font-weight: 900;
+
+  -webkit-text-stroke: 5px #410b0b;
+  /* האנימציה מופעלת כשה-JS מוסיף או מסיר את המחלקה open. */
+  transition: transform 1s, opacity 1s;
+}
+
+.door.open { 
+  transform: scaleX(.05); 
+  opacity: 0; 
+}
+
+.card { 
+  padding: 24px; 
+  margin-top: 20px; 
+  border: 1px solid #bc9c68; 
+  border-radius: 14px; 
+  background: #260101e0; 
+}
+
+label { 
+  display: block; 
+}
+
+input, button { 
+  font: inherit; 
+  padding: 10px 16px; 
+  border-radius: 7px; 
+}
+
+input { 
+  max-width: 100%; 
+  background: #410202d9; 
+  color: white; 
+  border: 1px solid #9781ac; 
+  direction: rtl; 
+}
+
+button { 
+  cursor: pointer; 
+  background: var(--blood);
+  color: #21182b; 
+  border: 0; 
+}
+
+
+
+#hint { 
+  color: #eee0e0;
+
+  background: #1b1012;
+
+  border-right: 3px solid #b52b39;
+  border-radius: 5px;
+
+  padding: 16px;
+  margin-top: 18px;
+
+  line-height: 2;
+
+  box-shadow:
+    inset 0 0 12px rgba(120, 20, 30, 0.08);
+}
+
+#message { 
+  min-height: 30px; 
+}
+
+#js-status { 
+  color: #bdb0d3; 
+  font-size: 12px; 
+}
+
+
+
+:focus-visible { 
+  outline: 3px solid #bc9c68; 
+  outline-offset: 4px; 
+}
+[hidden] { 
+  display: none !important; 
+}
+
+/* =========================
+   MAIN CARD
+========================= */
+
+.info-card {
+  width: 75%;
+  margin: 35px auto;
+  padding: 35px;
+
+  background: rgba(15, 9, 10, 0.96);
+
+  border: 1px solid #642027;
+  border-radius: 14px;
+
+  box-shadow:
+    0 0 20px rgba(167, 25, 36, 0.16),
+    0 20px 70px rgba(0, 0, 0, 0.7);
+}
+
+/* =========================
+   BACKSTORY
+========================= */
+
+.backstory {
+  text-align: center;
+  padding: 25px 15px 35px;
+  border-bottom: 1px solid #542027;
+  margin-bottom: 25px;
+}
+
+.backstory h1 {
+  color: #d52c3b;
+  font-size: 38px;
+  letter-spacing: 2px;
+
+  text-shadow:
+    0 0 8px rgba(213, 44, 59, 0.4);
+}
+
+.backstory h3 {
+  color: #d8caca;
+  font-size: 17px;
+  font-weight: normal;
+  line-height: 2.1;
+}
+
+/* =========================
+   SUSPECT NAVIGATION
+========================= */
+
+.suspect-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 30px auto;
+}
+
+.suspect-buttons button {
+  flex: 1;
+  padding: 13px;
+}
+
+/* =========================
+   SUSPECT CARDS
+========================= */
+
+.noga,
+.shachar,
+.hannah {
+  padding: 30px;
+  margin: 25px;
+
+  background:#100a0b;
+
+  border: 1px solid #592027;
+  border-radius: 12px;
+
+  
+}
+
+/* =========================
+   SUSPECT TITLES
+========================= */
+
+.noga h2,
+.shachar h2,
+.hannah h2 {
+  color: #d52c3b;
+  font-size: 28px;
+  letter-spacing: 1px;
+
+  border-bottom: 1px solid #63232b;
+  padding-bottom: 12px;
+}
+
+/* =========================
+   TEXT
+========================= */
+
+.noga h4,
+.shachar h4,
+.hannah h4 {
+  color: #e8dddd;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 2;
+}
+
+.noga h3,
+.shachar h3,
+.hannah h3 {
+  color: #eee0e0;
+
+  background: #1b1012;
+
+  border-right: 3px solid #b52b39;
+  border-radius: 5px;
+
+  padding: 16px;
+  margin-top: 18px;
+
+  line-height: 2;
+
+  box-shadow:
+    inset 0 0 12px rgba(120, 20, 30, 0.08);
+}
+
+/* =========================
+   CHARACTER IMAGES
+========================= */
+
+.character-image {
+  display: block;
+
+  background: #211932 url('mystery person picture.png') center;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+
+  width: 75%;
+  height: auto;
+
+  min-height: 200px;
+  min-width: 150px;
+  max-width: 100%;
+
+  margin: 10px auto 25px;
+
+  border: 2px solid #8c2632;
+  border-radius: 8px;
+
+  outline: 1px solid #4b171e;
+  outline-offset: 6px;
+
+  box-shadow:
+    0 0 12px rgba(167, 25, 36, 0.3),
+    0 12px 30px rgba(0, 0, 0, 0.65);
+
+  filter:
+    brightness(0.78)
+    contrast(1.12)
+    saturate(0.75);
+
+  transition: 
+    transform 0.35s ease,
+    filter 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+button {
+  padding: 11px 20px;
+
+  background: #1b0e10;
+  color: #f5eaea;
+
+  border: 1px solid #81232e;
+  border-radius: 6px;
+
+  font-family: inherit;
+  font-size: 15px;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+button:hover {
+  background: #3c1217;
+  border-color: #d52c3b;
+
+  box-shadow:
+    0 0 12px rgba(213, 44, 59, 0.35),
+    0 0 25px rgba(213, 44, 59, 0.12);
+
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+/* =========================
+   START BUTTON
+========================= */
+
+#startb {
+  display: block;
+  margin: 25px auto;
+  padding: 14px 35px;
+
+  font-size: 17px;
+  letter-spacing: 1px;
+
+  background: #53141b;
+  border-color: #c52d3b;
+}
+
+#startb:hover {
+  background: #741c26;
+}
+
+/* =========================
+   OFFICER BUTTONS
+========================= */
+
+#officer-noga,
+#officer-shachar,
+#officer-hannah {
+  margin-top: 12px;
+  border-color: #a33a44;
+}
+
+/* =========================
+   ANSWERS
+========================= */
+
+#ansn,
+#anss,
+#ansh {
+  color: #eee0e0;
+
+  padding: 16px;
+  line-height: 2;
+}
+
+
+#hint-button { 
+  margin-top: 14px; 
+  background: #53141b;
+  color: #eee0e0;
+  text-decoration: underline; 
+}
+

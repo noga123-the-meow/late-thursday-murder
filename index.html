@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>הרצח של יום שלישי</title>
+    <!-- CSS אחראי למראה. JS אחראי להתנהגות. הקבצים נמצאים באותה תיקייה. -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- defer אומר: הפעילי את ה-JavaScript אחרי שה-HTML מוכן. -->
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <p class="brand">למי אתם תבחרו להאמין ?</p>
+      <!-- שנו את הכותרת, הסיפור והחידה. שמרו על שמות ה-id. -->
+      <h1>הרצח של יום שלישי</h1>
+      <p id="story">
+        בשש בבוקר נמצאה מאיה מתה בביתה. ארבע חברות, לילה אחד, ויותר מדי
+        שאלות ללא תשובה. האם תצליחו לחשוף את האמת?
+      </p>
+      <section class="scene" aria-label=" זירת הרצח ">
+        <div class="door" id="door" aria-hidden="true">?</div>
+      </section>
+       <!--backstory-->
+    <div class="info-card" id="info-card">
+    <div class="backstory" id="backstory">
+      <h1>מה קרה?</h1>
+      <h3>
+        בלילה של יום שלישי, הגופה של מאיה נמצאה בשש בבוקר מתחת לספה בבית שלה.<br>
+        חנה ומאיה גרות ביחד באותו בית. נגה ושחר גרות בבית ממול.<br>
+        ארבע הבנות חברות טובות מאוד.<br>
+        בלילה של הרצח, ארבע הבנות עשו מסיבת פיג'מות בדירה של מאיה וחנה.<br>
+        לפי המשטרה, הרצח קרה בין שלוש לארבע בבוקר.<br>
+        לפניכם העדויות שהבנות הביאו כשנשאלו איפה הן היו:
+      </h3>
+    </div>
+    <button id="startb" onclick="start()">אני מוכנ/ה!</button>
+
+    <!--suspects-->
+    <div class="suspects" id="suspects">
+
+      <div class="suspect-buttons">
+        <button id="nogab" onclick="nogaf()">
+          נגה
+          <div class="character-image" alt="Mystery person"></div>
+        </button>
+        <button id="shacharb" onclick="shacharf()">
+          שחר
+          <div class="character-image" alt="Mystery person"></div>
+        </button>
+        
+        <button id="hannahb" onclick="hannahf()">
+          חנה
+          <div class="character-image" alt="Mystery person"></div>
+        </button>
+      </div>
+
+      <div class="noga" id="noga">
+      
+        <h2>נגה:</h2>
+        <h4>"אני קמתי קצת אחרי שהלכנו לישון,הייתי דיי שיכורה אז אני בעיקר זוכרת שהרגשתי נורא,<br> הקאתי וחזרתי לבית שלי ממול.. בשש ועשרה קמתי לרעש של הסיראנות  וככה גיליתי על הרצח.<br> אני בכל הכנות לא זוכרת הרבה מאותו לילה, נראלי מאיה ושחר רבו ובגלל זה הלכנו לישון מוקדם..<br> אני רבתי עם מאיה ? אני לא בטוחה. אני לא חושבת ששחר או מישהי מאיתנו הייתה מסוגלת לעשות את זה,<br> מאיה תמיד כל כך נחמדה לכולנו.. או יותר נכון.. ה-הייתה נחמדה.."</h4>
+        <button id="officer-noga" onclick="officer(this)">שאל/י את נגה שאלה</button>
+        <h3 id="officernq">"לא שמעת צרחות באיזור הזמן שבו תואר הרצח ?"</h3>
+        <button id="continuen" onclick="continuef(this)">הבא-></button>
+        <h4 id="ansn">“הייתי ממש עייפה. לא התעוררתי בכלל בלילה..<br> הלוואי שהייתי מתעוררת. אולי הייתי יכולה לעזור למאיה, לקרוא לעזרה לפני שהיה מאוחר מדי..."</h4>
+      </div>
+
+      <div class="shachar" id="shachar">
+       
+        <h2>שחר:</h2>
+        <h4>"אין לי מה לומר לכם, אני רבתי קצת עם חנה והלכתי לישון.<br> קמתי ברבע לארבע לצרחות, וכשהגעתי לשם הכל נראה רגיל אז חזרתי לישון-<br> חשבתי שמאיה מנסה לעצבן אותי שוב, אז צעקתי 'מאיה זה לא מצחיק !' וחזרתי לישון.<br>בבוקר, חנה הזאת העירה אותי ממש יותר מידי מוקדם ואמרה משהוא על זה שמאיה מתה..<br> היא דיברה כל כך מהר, זה בקושי היה מובן, אבל כשירדתי הבנתי בעצמי. והינה אנחנו כאן.<br>
+אני יודעת שרבנו,<br> אבל זה לא כאילו שנאתי אותה או משהו. היא הייתה חברה שלי.פשוט...<br> לא חשבתי שזאת תהיה הפעם האחרונה שאני אדבר איתה.."</h4>
+        <button id="officer-shachar" onclick="officer(this)">שאל/י את שחר שאלה</button>
+        <h3 id="officersq">"אני יודע שזה קשה לעיכול, אבל אני חייב לשאול: ייתכן שהיית שיכורה באותו לילה ושאת לא זוכרת חלק מהפרטים?"</h3>
+        <button id="continues" onclick="continuef(this)">הבא-></button>
+        <h4 id="anss">"מה פתאום, אנחנו לא חבורה של אלכוהול. הדבר הכי קרוב לאלכוהול שם היה סודה, תאמין לי.."</h4>
+      </div>
+
+      <div class="hannah" id="hannah">
+        
+        <h2>חנה:</h2>
+        <h4>
+"אני שמעתי צרחה בלילה, וראיתי שאני היחידה בחדר השינה ולא הבנתי איפה כולם.<br> האמת היינו שיכורות 
+ממש, בעיקר נגה, עשינו משחק מטופש על כמה שיותר וודקה בבת אחת..<br> אני זוכרת איך שחר ומאיה התעצבנו אחת על השניה בגלל שמאיה פלטה איזה משהוא על דרק,<br> האקס של שחר, והם התחילו ריב צעקות שהתחמם דיי מהר כזה..<br> וואו, זה נראה כל כך טיפשי, עכשיו שמאיה לא כאן, לריב על אקסים.."</h4>
+        <button id="officer-hannah" onclick="officer(this)">שאל/י את חנה שאלה</button>
+        <h3 id="officerhq">"אני מבין שזה קשה, אבל אני חייב להבין מה עשית אחרי שקמת מהצרחה. זיהית מי זאת ? הבנתי מה השעה ?"</h3>
+        <button id="continueh" onclick="continuef(this)">הבא-></button>
+        <h4 id="ansh">"וואו הייתי ממש האנגאובר, כאב לי הראש,<br> אני רק זוכרת שקמתי, ראיתי שאני לבד, הנחתי שהתעלפתי במסיבה..<br> ואז נראלי שהקאתי?.. ואז שמעתי מים, כנראה את המקלחת.. הנחתי, שוב,<br> שאחת מהבנות הקיאה על עצמה ומתנקה שניה. חזרתי לישון לא הרבה זמן אחרי זה. אולי אם הייתי שמה לב יותר..<br> הולכת לבדוק, מאיה הייתה בסדר.. "</h4>
+      </div>
+
+    </div>
+  </div>
+      <section class="card">
+        <h2>מי מהבנות משקרת ?</h2>
+        <p id="riddle">לרשותכם עדויות של כל אחת משלושת הבנות. תעברו על כל אחת בקפידה, מי מהם את מאיה רצחה ?</p>
+        
+        <!-- form מאפשר לשלוח את הקוד גם בלחיצה על Enter. -->
+        <form id="code-form">
+          <label for="code"></label>
+          <input id="code" type="text" maxlength="20" autocomplete="off" required />
+          <button id="check" type="submit">האם צדקתם ?</button>
+        </form>
+        <button id="hint-button" type="button" aria-expanded="false" aria-controls="hint">צריכות רמז?</button>
+        <p id="hint" hidden>שימו לב להבדלים בין העדויות של הבנות. האם כולן זוכרות את אותו הלילה באותה צורה?</p>
+        <p id="message" role="status" aria-live="polite"></p>
+      </section>
+      <p id="js-status">JavaScript עדיין לא נטען. אם ההודעה נשארת, פתחו את START-HERE.html.</p>
+    </main>
+  </body>
+</html>
