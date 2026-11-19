@@ -412,3 +412,20 @@ button:active {
   text-decoration: underline; 
 }
 
+.hana {
+  position: relative;
+  overflow: visible;
+}
+
+.hana_pic {
+  position: absolute;
+
+  width: 280px;
+  height: auto;
+
+  right: -180px;
+  bottom: 0;
+
+  z-index: 10;
+  pointer-events: none;
+}
