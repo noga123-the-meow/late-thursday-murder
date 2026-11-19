@@ -418,6 +418,7 @@ button:active {
 }
 
 .hana_pic {
+  background: #211932 url('hana_pic.jpg') center;
   position: absolute;
 
   width: 280px;
